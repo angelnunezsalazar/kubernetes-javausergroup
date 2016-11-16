@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: hello
+    spec:
+      containers:
+      - name: hello
+        image: gcr.io/PROJECT-ID/hello:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
